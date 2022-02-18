@@ -1,4 +1,4 @@
-package de.telekom.sea7.view;
+package de.telekom.sea7.model;
 
 import de.telekom.sea7.base.Zahlung;
 
