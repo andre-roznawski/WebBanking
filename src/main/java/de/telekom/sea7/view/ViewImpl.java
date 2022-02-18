@@ -57,7 +57,7 @@ public class ViewImpl {
 	@GetMapping ("/index.json")
 	@ResponseBody
 	public String getJSON() {
-		zahlung.setZahlung(1, "Erika Mueller", 612.78f, "Rechnung Fitnessstudio", false, "DE123456789");
+		zahlung.setZahlung(1, "Erika Mueller", 612.78f, "Rechnung Autoreparatur", false, "DE123456789");
 		/* Im "Browser" ausgeben (statt System.out) */
 		String json = "{\"Zahlung_id\": \"" + zahlung.getZahlung_id() + "\",\"Empfaenger\": \"" + zahlung.getEmpfaenger()
 		+ "\",\"Betrag\": \"" + zahlung.getBetrag() + "\",\"Verwendungszweck\": \"" + zahlung.getVerwendungszweck()

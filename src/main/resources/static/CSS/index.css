@@ -13,3 +13,130 @@
 	color: red;
 	background-color: grey;
 }
+.zahlung_id {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 100px;
+	height: 20px;
+	top: 170px;
+	left: 50px;
+	
+}
+.empfaenger {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 200px;
+	height: 20px;
+	top: 170px;
+	left: 150px;
+}
+.betrag {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 100px;
+	height: 20px;
+	top: 170px;
+	left: 300px;
+}
+.verwendungszweck {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 300px;
+	height: 20px;
+	top: 170px;
+	left: 450px;
+}
+.echtzeitueberweisung {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 100px;
+	height: 20px;
+	top: 170px;
+	left: 750px;
+}
+.iban {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 100px;
+	height: 20px;
+	top: 170px;
+	left: 850px;
+}
+.zahlung_id_ue {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 100px;
+	height: 20px;
+	top: 150px;
+	left: 50px;
+	backround-color: grey;
+}
+.empfaenger_ue {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 200px;
+	height: 20px;
+	top: 150px;
+	left: 150px;
+	backround-color: grey;
+}
+.betrag_ue {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 300px;
+	height: 20px;
+	top: 150px;
+	left: 350px;
+	backround-color: grey;
+}
+.verwendungszweck_ue {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 100px;
+	height: 20px;
+	top: 150px;
+	left: 450px;
+	backround-color: grey;
+}
+.echtzeitueberweisung_ue {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 150px;
+	height: 20px;
+	top: 150px;
+	left: 750px;
+	backround-color: grey;
+}
+.iban_ue {
+	border-style: solid;
+	border-width: 2px;	
+	font-family: arial;
+	position: absolute;
+	with: 100px;
+	height: 20px;
+	top: 150px;
+	left: 850px;
+	backround-color: grey;
+}
