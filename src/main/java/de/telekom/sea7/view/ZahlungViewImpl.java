@@ -2,6 +2,7 @@ package de.telekom.sea7.view;
 
 import de.telekom.sea7.base.Zahlung;
 import de.telekom.sea7.base.ZahlungView;
+import de.telekom.sea7.model.ZahlungImpl;
 
 public class ZahlungViewImpl implements ZahlungView {
 
