@@ -89,4 +89,11 @@ public class ViewImpl {
 		return json;
 		
 	}
+	@GetMapping ("/")
+	//@ResponseBody 
+	public String gethtml10() {
+		
+		
+		return "index10";
+	}
 }

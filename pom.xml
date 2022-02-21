@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
-			
+
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
@@ -30,7 +30,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			</dependency>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 
 	</dependencies>
 	<build>
@@ -38,7 +42,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				
+
 			</plugin>
 		</plugins>
 	</build>
