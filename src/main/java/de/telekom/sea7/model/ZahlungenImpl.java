@@ -5,7 +5,7 @@ import de.telekom.sea7.base.Zahlungen;
 
 public class ZahlungenImpl <T> implements Zahlungen <T> {
 	
-		private T[] liste = ((T[])new Object[9]);
+		private T[] liste = ((T[])new Object[999]);
 		//private String message;
 
 		//Konstruktor vorbelegung aller Felder mit aufsteigender integer Zahl beginnend bei null 

@@ -4,25 +4,34 @@ import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import de.telekom.sea7.base.Kunde;
 import de.telekom.sea7.base.Zahlung;
 import de.telekom.sea7.base.Zahlungen;
+import de.telekom.sea7.model.KundeImpl;
 import de.telekom.sea7.model.ZahlungImpl;
+import de.telekom.sea7.services.KundeService;
+import de.telekom.sea7.services.ZahlungenService;
 
 @Controller
 public class ViewImpl {
 
 //	@Autowired
 //	Zahlung zahlung;
-	
+
 //	@Autowired
 //	Zahlungen<Zahlung> zahlungen;
-	
+
 	@Autowired
 	ZahlungenService zahlungenService;
-	
+	@Autowired
+	KundeService kundeService;
+
 //	@GetMapping("/index.html")
 //	@ResponseBody
 //	public String getHtml() {
@@ -62,7 +71,7 @@ public class ViewImpl {
 //		return js;
 //	}
 
-	@GetMapping ("/index.json")
+	@GetMapping("/index.json")
 	@ResponseBody
 	public String getJSON() {
 		Zahlung zahlung1 = new ZahlungImpl();
@@ -77,23 +86,39 @@ public class ViewImpl {
 		/* Im "Browser" ausgeben (statt System.out) */
 		String json = "[";
 		for (int i = 1; i <= zahlungenService.getZahlungen().size(); i++) {
-		json = json + "{\"Zahlung_id\": \"" + zahlungenService.getZahlungen().get(i).getZahlung_id() + "\",\"Empfaenger\": \"" 
-		+ zahlungenService.getZahlungen().get(i).getEmpfaenger()
-		+ "\",\"Betrag\": \"" + zahlungenService.getZahlungen().get(i).getBetrag() + "\",\"Verwendungszweck\": \"" 
-		+ zahlungenService.getZahlungen().get(i).getVerwendungszweck()
-		+ "\",\"Echtzeitueberweisung\": \"" + zahlungenService.getZahlungen().get(i).getEchtzeitueberweisung()
-		+ "\",\"IBAN\": \"" + zahlungenService.getZahlungen().get(i).getIban() + "\"}";
-		if(i < (zahlungenService.getZahlungen().size())) json = json + ",";
+			json = json + "{\"Zahlung_id\": \"" + zahlungenService.getZahlungen().get(i).getZahlung_id()
+					+ "\",\"Empfaenger\": \"" + zahlungenService.getZahlungen().get(i).getEmpfaenger()
+					+ "\",\"Betrag\": \"" + zahlungenService.getZahlungen().get(i).getBetrag()
+					+ "\",\"Verwendungszweck\": \"" + zahlungenService.getZahlungen().get(i).getVerwendungszweck()
+					+ "\",\"Echtzeitueberweisung\": \""
+					+ zahlungenService.getZahlungen().get(i).getEchtzeitueberweisung() + "\",\"IBAN\": \""
+					+ zahlungenService.getZahlungen().get(i).getIban() + "\"}";
+			if (i < (zahlungenService.getZahlungen().size()))
+				json = json + ",";
 		}
 		json = json + "]";
 		return json;
-		
 	}
-	@GetMapping ("/")
-	//@ResponseBody 
-	public String gethtml10() {
-		
-		
-		return "index10";
+
+	@PostMapping("/JSON/index1.json")
+	@ResponseBody
+	public void postJSON(String json) {
+		Zahlung zahlung1 = new ZahlungImpl();
+		// zahlung1.setZahlung(, "Erika Mueller", 612.78f, "Rechnung Fitnessstudio",
+		// false, "DE123456789");
+	}
+	
+	@GetMapping("/index11.html")
+	public String gethtml11(Model model) {
+	//	Kunde kunde1 = new KundeImpl();
+	//	kunde1.setKunde("Erika", "Mueller", "Hauptstr. 12", 67677, "Musterhausen");
+	  
+            model.addAttribute("name", kundeService.getKunde().getName());
+            model.addAttribute("vorname", kundeService.getKunde().getVorname());
+            model.addAttribute("strasse_nr", kundeService.getKunde().getStrasse_nr());
+            model.addAttribute("plz", kundeService.getKunde().getPlz());
+            model.addAttribute("wohnort", kundeService.getKunde().getWohnort());    
+            
+		return "index11";
 	}
 }
