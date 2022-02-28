@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Thymeleaf</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+
+	<h1>Ansicht Kunde</h1>
+	<p th:text="|Name:            ${name}|">Hello World!</p>
+	<p th:text="|Vorname:         ${vorname}|">Hello World!</p>
+	<p th:text="|Strasse:         ${strasse_nr}|">Hello World!</p>
+	<p th:text="|Postleitzahl:    ${plz}|">Hello World!</p>
+	<p th:text="|Wohnort:         ${wohnort}|">Hello World!</p>
+
+	<nav>
+		<ul>
+			<p>
+				<a href="index.html">Zurück zu Hauptseite</a><br>
+			</p>
+		</ul>
+	</nav>
+</body>
+</html>
