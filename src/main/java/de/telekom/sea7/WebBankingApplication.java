@@ -9,7 +9,7 @@ public class WebBankingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebBankingApplication.class, args);
-
+		
 	}
 
 }

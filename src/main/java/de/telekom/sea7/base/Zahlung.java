@@ -1,7 +1,9 @@
 package de.telekom.sea7.base;
 
-import de.telekom.sea7.model.IbanImpl;
+import org.springframework.stereotype.Component;
 
+import de.telekom.sea7.model.IbanImpl;
+@Component
 public interface Zahlung {
 
 	int getZahlung_id();

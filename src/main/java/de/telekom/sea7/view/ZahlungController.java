@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import de.telekom.sea7.MyBean;
 import de.telekom.sea7.model.IbanImpl;
 import de.telekom.sea7.model.ZahlungImpl;
 import de.telekom.sea7.persistence.ZahlungRepository;
