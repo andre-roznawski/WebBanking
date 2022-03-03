@@ -13,7 +13,6 @@
 	background-color: grey;
 }
  table{
-            background-color: yellow;
             border-collapse: collapse;
             border-spacing: 0;
         }
@@ -36,91 +35,51 @@
   grid-column: 2 / 3;
   grid-row:    1 / 2;
 }
-       .box1-3 {
-  grid-column: 3 / 4;
-  grid-row:    1 / 2;
-}
         .box2-1 {
   grid-column: 1 / 2;
-  grid-row:    3 / 4;
+  grid-row:    2 / 3;
 }
         .box2-2 {
   grid-column: 2 / 3;
+  grid-row:    2 / 3;
+}
+        .box3-1 {
+  grid-column: 1 / 2;
   grid-row:    3 / 4;
 }
-        .box2-3 {
-  grid-column: 3 / 4;
+      .box3-2 {
+  grid-column: 2 / 3;
   grid-row:    3 / 4;
-}
-     .box3-4 {
-  grid-column: 4 / 9;
-  grid-row:    3 / 14;
 }
         .box4-1 {
   grid-column: 1 / 2;
-  grid-row:    6 / 7;
+  grid-row:    4 / 5;
 }
         .box4-2 {
   grid-column: 2 / 3;
-  grid-row:    6 / 7;
+  grid-row:    4 / 5;
 }
         .box5-1 {
   grid-column: 1 / 2;
-  grid-row:    7 / 8;
+  grid-row:    5 / 6;
 }
         .box5-2 {
   grid-column: 2 / 3;
-  grid-row:    7 / 8;
+  grid-row:    5 / 6;
 }
         .box6-1 {
   grid-column: 1 / 2;
-  grid-row:    8 / 9;
+  grid-row:    6 / 7;
 }
         .box6-2 {
   grid-column: 2 / 3;
-  grid-row:    8 / 9;
+  grid-row:    6 / 7;
 }
       .box7-1 {
   grid-column: 1 / 2;
-  grid-row:    9 / 10;
+  grid-row:    7 / 8;
 }
         .box7-2 {
   grid-column: 2 / 3;
-  grid-row:    9 / 10;
-}
-        .box8-1 {
-  grid-column: 1 / 2;
-  grid-row:    10 / 11;
-}
-        .box8-2 {
-  grid-column: 2 / 3;
-  grid-row:    10 / 11;
-}
-      .box9-1 {
-  grid-column: 1 / 2;
-  grid-row:    11 / 12;
-}
-        .box9-2 {
-  grid-column: 2 / 3;
-  grid-row:    11 / 12;
-  height:35px; 
-  width:220px;
-}
-        .box10-1 {
-  grid-column: 1 / 2;
-  grid-row:    12 / 13;
-}
-        .box10-2 {
-  grid-column: 2 / 3;
-  grid-row:    12 / 13;
-  height:35px; 
-  width:220px;
-}
-        .box11-1 {
-  grid-column: 1 / 2;
-  grid-row:    13 / 14;
-}
-        .box11-2 {
-  grid-column: 2 / 3;
-  grid-row:    13 / 14;
+  grid-row:    7 / 8;
 }

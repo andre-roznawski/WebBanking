@@ -14,7 +14,7 @@ public class KundeImpl implements Kunde {
 
 	}
 
-	public KundeImpl(String name, String vorname, String strasse_nr,
+	public KundeImpl(String vorname, String name, String strasse_nr,
 			int plz, String wohnort) {
 		this.vorname = vorname;
 		this.name = name;
@@ -23,7 +23,7 @@ public class KundeImpl implements Kunde {
 		this.wohnort = wohnort;
 	}
 
-	public void setKunde(String name, String vorname, String strasse_nr,
+	public void setKunde(String vorname, String name, String strasse_nr,
 			int plz, String wohnort) {
 		this.vorname = vorname;
 		this.name = name;

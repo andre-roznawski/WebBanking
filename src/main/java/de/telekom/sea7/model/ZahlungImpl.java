@@ -1,22 +1,43 @@
 package de.telekom.sea7.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import de.telekom.sea7.base.Iban;
 import de.telekom.sea7.base.Zahlung;
 
+@Entity
+@Table(name = "zahlungen")
 public class ZahlungImpl implements Zahlung {
 
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int zahlung_id;
+	@Column(name = "Empfaenger")
 	private String empfaenger;
+	@Column(name = "Betrag")
 	private float betrag;
+	@Column(name = "Verwendungszweck")
 	private String verwendungszweck;
+	@Column(name = "Echtzeitueberweisung")
 	private boolean echtzeitueberweisung;
-	private String iban;
+//	@Column(name = "iban_id")
+//	private int ibanid;
+	@ManyToOne
+	@JoinColumn(name = "iban_id")
+	private IbanImpl iban;
 
 	public ZahlungImpl() {
-
 	}
 
 	public ZahlungImpl(int zahlung_id, String empfaenger, float betrag, String verwendungszweck,
-			boolean echtzeitueberweisung, String iban) {
+			boolean echtzeitueberweisung, IbanImpl iban) {
 		this.zahlung_id = zahlung_id;
 		this.empfaenger = empfaenger;
 		this.betrag = betrag;
@@ -26,7 +47,7 @@ public class ZahlungImpl implements Zahlung {
 	}
 
 	public void setZahlung(int zahlung_id, String empfaenger, float betrag, String verwendungszweck,
-			boolean echtzeitueberweisung, String iban) {
+			boolean echtzeitueberweisung, IbanImpl iban) {
 		this.zahlung_id = zahlung_id;
 		this.empfaenger = empfaenger;
 		this.betrag = betrag;
@@ -86,15 +107,19 @@ public class ZahlungImpl implements Zahlung {
 		this.echtzeitueberweisung = echtzeitueberweisung;
 	}
 
-	@Override
-	public String getIban() {
+//	public int getIbanid() {
+//		return ibanid;
+//	}
+//
+//	public void setIbanid(int ibanid) {
+//		this.ibanid = ibanid;
+//	}
+
+	public IbanImpl getIban() {
 		return iban;
 	}
 
-	@Override
-	public void setIban(String iban) {
+	public void setIban(IbanImpl iban) {
 		this.iban = iban;
 	}
-	
-
 }

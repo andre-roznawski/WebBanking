@@ -11,41 +11,95 @@
 
 </head>
 
-<body id="body">
+<body id="body" bgcolor=lightblue>
 
-<span id='emph1'> <h1>Welcome to WebBanking</h1> </span>
-<div>
-<p>
-<input id="input_id" type="text">Zahlung_id<br>
-<button id="button_zahlung_id" >Abfrage Zahlung_ID</button>
-<p>
-<output>Zahlung_id:</output><output id="zahlung_id"></output><br>
-<output>Empfänger:</output><input id="empfaenger" type="text"><br>
-<output>Betrag[€]:</output><input id="betrag" type="text"><br>
-<output>Verwendungszweck:</output><input id="verwendungszweck" type="text"><br>
-<output>Echtzeitüberweisung:</output><input id="echtzeitueberweisung" type="text"><br>
-<output>IBAN-Nr.:</output><input id="iban" type="text">
-<p>
-</div>
-<div>
-<button id="button_zahlung_update" >Update obiger Zahlung</button>
-<p>
-<form id="index_1" action="index1.html">
-	 <button> Neue Zahlung erfassen</button>
- </form>
- <p>
-<form id="index_11" action="index11.html">
-	 <button> Anzeige Kunde</button>
- </form>
-<br>
-</div>
-<form id="button_zahlungen_all" action="index2.html">
-     <button> Anzeige aller Zahlungen</button>
-</form>
-<p>
-<br>
-<div id="table_z">
-</div>
-<br>
+	<span id='emph1'>
+		<h1>Welcome to WebBanking</h1>
+		<br>
+	<br>
+	</span>
+	<div>
+		<div class="wrapper">
+			<div class="box1-1">
+				<form id="index_11" action="index11.html">
+					<button style="height:35px; width:215px;">Anzeige Kunde</button>
+			</div>
+			</form>
+			<div class="box1-2">
+				<form id="index_1" action="index1.html">
+					<button style="height:35px; width:215px;">Neue Zahlung erfassen</button>
+				</form>
+			</div>
+			<div class="box1-3">
+				<form id="button_zahlungen_all" action="index2.html">
+					<button style="height:35px; width:215px;">Anzeige aller Zahlungen</button>
+				</form>
+			</div>
+
+			<div class="box2-1">
+				<output style="height:35px; width:215px;">Zahlung_id:</output>
+			</div>
+			<div class="box2-2">
+				<input id="input_id" type="text" style="height:30px; width:210px;">
+			</div>
+			<div class="box2-3">
+				<button id="button_zahlung_id" style="height:35px; width:215px;">Abfrage Zahlung via ID</button>
+			</div>
+			<div class="box4-1">
+				<output style="height:35px; width:215px;">Zahlung_id:</output>
+			</div>
+			<div class="box4-2">
+				<output id="zahlung_id" style="height:35px; width:215px;"></output>
+				<br>
+			</div>
+			<div class="box5-1">
+				<output style="height:35px; width:215px;">Empfänger:</output>
+			</div>
+			<div class="box5-2">
+				<input id="empfaenger" type="text" style="height:30px; width:210px;"><br>
+			</div>
+			<div class="box6-1">
+				<output style="height:35px; width:215px;">Betrag[€]:</output>
+			</div>
+			<div class="box6-2">
+				<input id="betrag" type="text" style="height:30px; width:210px;"><br>
+			</div>
+			<div class="box7-1">
+				<output style="height:35px; width:215px;">Verwendungszweck:</output>
+			</div>
+			<div class="box7-2">
+				<input id="verwendungszweck" type="text" style="height:30px; width:210px;"><br>
+			</div>
+			<div class="box8-1">
+				<output style="height:35px; width:215px;">Echtzeitüberweisung:</output>
+			</div>
+			<div class="box8-2">
+				<input id="echtzeitueberweisung" type="text" style="height:30px; width:210px;"><br>
+			</div>
+			<div class="box9-1">
+				<output style="height:35px; width:215px;">IBAN-Nr.:</output>
+			</div>
+			<div class="box9-2">
+				<input id="iban" type="text" style="height:30px; width:210px;">
+			</div>
+			<div class="box10-1"></div>
+			<div class="box10-2">
+				<button id="button_zahlung_update" style="height:35px; width:215px;">Update obiger Zahlung</button>
+			</div>
+			<div class="box11-1"></div>
+			<div class="box11-2">
+				<button id="button_zahlung_delete" style="height:35px; width:215px;">Löschen obiger Zahlung</button>
+			</div>
+		</div>
+		<p>
+	</div>
+	<div>
+		<p>
+		<br>
+	</div>
+	<p>
+		<br>
+	     <div id="table_z"></div>
+	<br>
 </body>
 </html>

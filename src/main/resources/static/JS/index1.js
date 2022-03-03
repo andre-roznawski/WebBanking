@@ -8,7 +8,7 @@ function e2( data ) {
 }
 
 function request_add() {
-	var zahlung_id = document.getElementById("zahlung_id").value;
+//	var zahlung_id = document.getElementById("zahlung_id").value;
 	var empfaenger = document.getElementById("empfaenger").value;
 	var betrag = document.getElementById("betrag").value;
 	var verwendungszweck = document.getElementById("verwendungszweck").value;
@@ -16,12 +16,14 @@ function request_add() {
 	var iban = document.getElementById("iban").value;
 	
 	var data = {
-	   zahlung_id: zahlung_id,
+//	   zahlung_id: zahlung_id,
 	   empfaenger: empfaenger,
 	   betrag: betrag,
 	   verwendungszweck: verwendungszweck,
 	   echtzeitueberweisung: echtzeitueberweisung,
-	   iban: iban
+	   iban: {
+			iban: iban
+		}
     }
 	var json = JSON.stringify(data);
 	console.log(json);

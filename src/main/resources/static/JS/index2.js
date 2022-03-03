@@ -7,8 +7,8 @@ function empfaenger1(antwort) {
 
 function zahlungen_view(json) {
 	table_zahlungenview_header();
-	for (var i = 0; i < json.liste.length; i++) {
-		if ((json.liste[i]) !== null) {
+	for (var i = 0; i < json.length; i++) {
+		if ((json[i]) !== null) {
 		/*console.log('Zahlung_ID: ' + json.liste[i].zahlung_id);
 		console.log('Empfänger: ' + json.liste[i].empfaenger);
 		console.log('Betrag: ' + json.liste[i].betrag);
@@ -28,12 +28,16 @@ function zahlungen_view(json) {
 		let row_d_data_4 = document.createElement('td');
 		let row_d_data_5 = document.createElement('td');
 		let row_d_data_6 = document.createElement('td');
-		row_d_data_1.innerHTML = json.liste[i].zahlung_id;
-		row_d_data_2.innerHTML = json.liste[i].empfaenger;
-		row_d_data_3.innerHTML = json.liste[i].betrag;
-		row_d_data_4.innerHTML = json.liste[i].verwendungszweck;;
-		row_d_data_5.innerHTML = json.liste[i].echtzeitueberweisung;
-		row_d_data_6.innerHTML = json.liste[i].iban;
+		row_d_data_1.innerHTML = json[i].zahlung_id;
+		row_d_data_2.innerHTML = json[i].empfaenger;
+		row_d_data_3.innerHTML = json[i].betrag;
+		row_d_data_4.innerHTML = json[i].verwendungszweck;;
+		row_d_data_5.innerHTML = json[i].echtzeitueberweisung;
+		if ((json[i].iban) == null) {
+			row_d_data_6.innerHTML = "";
+		}  else {
+			row_d_data_6.innerHTML = json[i].iban.iban;
+		}
 		row_d.appendChild(row_d_data_1);
 		row_d.appendChild(row_d_data_2);
 		row_d.appendChild(row_d_data_3);

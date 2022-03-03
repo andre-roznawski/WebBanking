@@ -11,23 +11,59 @@
 
 </head>
 
-<body id="body">
+<body id="body" bgcolor=lightblue>
 
-	<span id='emph1'>
-		<h1>Erfassen einer neuen Zahlung</h1>
+	<span id='emph1'><h1>Erfassen einer neuen Zahlung</h1>
+	<br>
+	<br>
 	</span>
 	<div>
 		<p>
-			<input id="zahlung_id" type="text"> Zahlung_id<br> <input
-				id="empfaenger" type="text"> Empfänger<br> <input
-				id="betrag" type="text"> Betrag<br> <input
-				id="verwendungszweck" type="text"> Verwendungszweck<br>
-			<input id="echtzeitueberweisung" type="text">
-			Echtzeitüberweisung<br> <input id="iban" type="text">
-			IBAN
+			<div class="wrapper">
+			<div class="box1-1">
+				<output style="height: 33px; width: 215px;">Zahlung_id:</output>
+			</div>
+			<div class="box1-2">
+			<input id="zahlung_id" type="text" style="height:33px; width:215px;"><br> 
+			</div>
+			<div class="box2-1">
+				<output style="height:33px; width:215px;">Empfaenger:</output>
+			</div> 
+			<div class="box2-2">
+			<input id="empfaenger" type="text" style="height:33px; width:215px;"><br> 
+			</div>
+			<div class="box3-1">
+				<output style="height:33px; width:215px;">Betrag:</output>
+			</div> 
+			<div class="box3-2">
+			<input id="betrag" type="text" style="height:33px; width:215px;"> 
+			</div>
+			<div class="box4-1">
+				<output style="height:33px; width:215px;">Verwendungszweck:</output>
+			</div> 
+			<div class="box4-2">
+			<input id="verwendungszweck" type="text" style="height:33px; width:215px;">
+			</div>
+			<div class="box5-1">
+				<output style="height:33px; width:215px;">Echtzeitüberweisung:</output>
+			</div> 
+			<div class="box5-2">
+			<input id="echtzeitueberweisung" type="text" style="height:33px; width:215px;">
+            </div> 
+            <div class="box6-1">
+				<output style="height:33px; width:215px;"
+			style="height:35px; width:215px;">IBAN-Nr.:</output>
+			</div>
+            <div class="box6-2">
+			<input id="iban" type="text" style="height:33px; width:215px;">
+			</div> 
+			<div class="box7-2">
+			<button id="button_zahlung_add" style="height:35px; width:220px;">Anlegen neuer Zahlung</button>
+			</div>
+			</div>
 		</p>
+	</div>	
 		<br>
-		<button id="button_zahlung_add">Erfassen einer neuen Zahlung</button>
 		<nav>
 			<ul>
 				<p>
@@ -35,5 +71,6 @@
 				</p>
 			</ul>
 		</nav>
+
 </body>
 </html>

@@ -1,8 +1,9 @@
 package de.telekom.sea7.base;
 
-import de.telekom.sea7.model.IbanImpl;
+public interface ZahlungWeb {
 
-public interface Zahlung {
+	void setZahlung(int zahlung_id, String empfaenger, float betrag, String verwendungszweck,
+			boolean echtzeitueberweisung, String iban);
 
 	int getZahlung_id();
 
@@ -24,11 +25,8 @@ public interface Zahlung {
 
 	void setEchtzeitueberweisung(boolean echtzeitueberweisung);
 
-	IbanImpl getIban();
+	String getIban();
 
-	void setIban(IbanImpl iban);
-	
-	void setZahlung(int zahlung_id, String empfaenger, float betrag, String verwendungszweck,
-			boolean echtzeitueberweisung, IbanImpl iban);
+	void setIban(String iban);
 
 }
