@@ -2,6 +2,7 @@ package de.telekom.sea7.view;
 
 import java.util.Optional;
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.telekom.sea7.MyBean;
+import de.telekom.sea7.base.Zahlung;
+import de.telekom.sea7.base.Zahlungen;
 import de.telekom.sea7.model.IbanImpl;
 import de.telekom.sea7.model.ZahlungImpl;
 import de.telekom.sea7.persistence.ZahlungRepository;
@@ -19,12 +21,12 @@ import de.telekom.sea7.persistence.IbanRepository;
 
 @RestController
 public class ZahlungController {
-
+	
 	@Autowired
 	private ZahlungRepository repository;
 	@Autowired
 	private IbanRepository ibanrepository;
-	
+
 	@GetMapping("/zahlung/{zahlung_id}/")
 	public ZahlungImpl getZahlung(@PathVariable("zahlung_id") int zahlung_id) {
 		Optional<ZahlungImpl> optionalZahlung = repository.findById(zahlung_id);
@@ -49,8 +51,24 @@ public class ZahlungController {
 	public ZahlungImpl postZahlung(@RequestBody ZahlungImpl zahlung) {
 		IbanImpl iban = new IbanImpl();
 		iban = zahlung.getIban();
-		ibanrepository.save(iban);
-		repository.save(zahlung);
+		Iterable<IbanImpl> iterableIban = ibanrepository.findAll();
+		int ibanexist = 0;
+		int ibanid = 0;
+		for (IbanImpl iban1 : iterableIban) {
+			if (iban.getIban().startsWith(iban1.getIban())) {
+				ibanexist++;
+				if (ibanexist == 1) {
+					ibanid = iban1.getIban_id();
+				}
+			}
+		}
+		if (ibanexist == 0) {
+			iban = ibanrepository.save(iban);
+		} else {
+			iban.setIban_id(ibanid);
+			iban = ibanrepository.save(iban);
+		}
+		zahlung = repository.save(zahlung);
 		return zahlung;
 	}
 
@@ -58,16 +76,42 @@ public class ZahlungController {
 	public ZahlungImpl putZahlung(@RequestBody ZahlungImpl zahlung) {
 		IbanImpl iban = new IbanImpl();
 		iban = zahlung.getIban();
-		ibanrepository.save(iban);
-		repository.save(zahlung);
+		int ibanexist = 0;
+		int ibanid = 0;
+		int ibanid_old = 0;
+		ibanid_old = repository.findById(zahlung.getZahlung_id()).get().getIban().getIban_id();
+		System.out.println("ibanid_old " + ibanid_old);
+		Iterable<IbanImpl> iterableIban = ibanrepository.findAll();
+		for (IbanImpl iban1 : iterableIban) {
+			if (iban.getIban().startsWith(iban1.getIban())) {
+				ibanexist++;
+				if (ibanexist == 1) {
+					ibanid = iban1.getIban_id();
+				}
+			}
+		}
+		if (ibanexist == 0) {
+			iban = ibanrepository.save(iban);
+			zahlung = repository.save(zahlung);
+		} else {
+			iban.setIban_id(ibanid);
+			iban = ibanrepository.save(iban);
+			zahlung = repository.save(zahlung);
+			if (ibanid_old != ibanid) ibanrepository.deleteById(ibanid_old);
+		}
 		return zahlung;
 	}
 
 	@DeleteMapping("/zahlung/{zahlung_id}/")
 	public int deleteZahlung(@PathVariable int zahlung_id) {
+		int ibanid = 0;
+		Optional<ZahlungImpl> optionalZahlung = repository.findById(zahlung_id);
+		ibanid = optionalZahlung.get().getIban().getIban_id();
 		repository.deleteById(zahlung_id);
+		if (ibanid != 0) {
+			ibanrepository.deleteById(ibanid);	
+		}	
 		return zahlung_id;
-
 	}
 
 }
